@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página com Fundo em Gradiente</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: radial-gradient(circle, #00c6ff, #0077cc); /* Gradiente azul com centro claro */
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow-x: hidden; /* Evita rolagem horizontal */
+        }
+        .logo {
+            width: auto;
+            height: 50px; /* Ajuste a altura conforme necessário */
+            margin-top: 5px; /* Diminuir o espaço acima da logo */
+        }
+        .content {
+            text-align: center;
+            padding: 20px;
+            width: 90%; /* Largura adaptável para telas menores */
+            max-width: 600px; /* Limita a largura máxima para grandes telas */
+            box-sizing: border-box; /* Inclui padding e border na largura total */
+            overflow: auto; /* Adiciona rolagem vertical se necessário */
+            margin-top: 5px; /* Diminuir o espaço acima do conteúdo */
+        }
+        .channel-image {
+            width: 150px; /* Ajuste a largura conforme necessário */
+            height: 150px; /* Manter altura igual à largura para manter formato circular */
+            border-radius: 50%; /* Faz a imagem ficar em formato circular */
+            border: 2px solid #fff; /* Borda branca mais fina ao redor da imagem */
+            margin: 20px 0; /* Espaçamento acima e abaixo da imagem */
+            display: block;
+            margin-left: auto;
+            margin-right: auto; /* Centraliza a imagem horizontalmente */
+        }
+        .youtube-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.1em;
+            margin-top: 20px;
+        }
+        .youtube-button {
+            display: inline-flex;
+            align-items: center;
+            background-color: #ff0000; /* Cor de fundo vermelho do YouTube */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 15px;
+            font-size: 1em;
+            text-decoration: none;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .youtube-button:hover {
+            background-color: #cc0000; /* Cor de fundo ao passar o mouse */
+        }
+        .youtube-button img {
+            width: 20px; /* Tamanho do ícone dentro do botão */
+            height: 20px; /* Tamanho do ícone dentro do botão */
+            margin-right: 8px; /* Espaçamento entre o ícone e o texto */
+        }
+        .video-container {
+            width: 100%;
+            max-width: 560px; /* Largura máxima do vídeo */
+            position: relative;
+            padding-top: 56.25%; /* Proporção de 16:9 (altura / largura * 100) */
+            margin-top: 20px;
+            overflow: hidden;
+            background: #000; /* Cor de fundo para cobrir espaços em branco */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        footer {
+            text-align: center;
+            width: 100%;
+            padding: 10px;
+            font-size: 0.9em;
+            margin-top: 20px; /* Espaço acima do rodapé */
+            color: #fff; /* Cor do texto no rodapé */
+        }
+    </style>
+    <!-- Código de remarketing do Google -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'YOUR_MEASUREMENT_ID');
+    </script>
+</head>
+<body>
+    <img src="logo.png" alt="Logo" class="logo">
+    <div class="content">
+        <h1>Bem-vindo!</h1>
+        <p>Conheça nosso canal no YouTube para vídeos incríveis sobre DIY e muito mais. Clique no botão abaixo para explorar o conteúdo:</p>
+        <a href="https://www.youtube.com/channel/UC1DLBriC3l63hqg6Pz1-Zyg" target="_blank" class="youtube-button" onclick="gtag('event', 'click', {'event_category': 'YouTube Button', 'event_label': 'Visitar Canal'});">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/YouTube_icon_%282013-2017%29.png/128px-YouTube_icon_%282013-2017%29.png" alt="YouTube" style="filter: invert(1);">
+            Visitar Canal
+        </a>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/lMcGLSQw-14?autoplay=1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+    <footer>
+        Belo Inventor © Todos os direitos reservados - <span id="year"></span>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const year = new Date().getFullYear();
+            document.getElementById('year').textContent = year;
+        });
+    </script>
+</body>
+</html>
